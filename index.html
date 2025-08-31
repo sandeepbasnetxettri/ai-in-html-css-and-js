@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - AI Language Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ne',
+                includedLanguages: 'en,ne,hi,zh-CN,ja,ko,fr,de,es,ar,ru',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate dropdown */
+        #google_translate_element {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="google-translate-container">
+            <div id="google_translate_element"></div>
+        </div>
+        <div class="jarvis-interface">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>Jarvis</h1>
+                    <span class="backend-status" id="backendStatus" title="Backend Status">
+                        <i class="fas fa-circle"></i>
+                    </span>
+                </div>
+                <p class="subtitle">AI Language Assistant</p>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en" title="English">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-btn" data-lang="ne" title="नेपाली">
+                        <span>नेपाली</span>
+                    </button>
+                </div>
+                <div class="google-translate-container">
+                    <div id="google_translate_element"></div>
+                </div>
+                <div class="datetime-display">
+                    <!-- <div id="currentDate"></div> -->
+                    <div id="currentTime"></div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="voice-visualizer">
+                    <div class="mic-container">
+                        <div class="mic-button" id="micButton">
+                            <i class="fas fa-microphone" id="micIcon"></i>
+                        </div>
+                        <div class="status-text" id="statusText">Click to activate Jarvis</div>
+                    </div>
+                    
+                    <div class="wave-container" id="waveContainer">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+
+                <div class="conversation-area">
+                    <div class="conversation-header">
+                        <h3>Conversation History</h3>
+                        <button class="clear-btn" id="clearBtn">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                    <div class="conversation-log" id="conversationLog">
+                        <div class="message jarvis-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">Hello! I am Jarvis, your AI language assistant. Say "Jarvis" to activate me, then give me a command.</div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="text-input-container">
+                        <input type="text" id="textInput" placeholder="Or type your command here..." />
+                        <button id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Powered by OpenAI GPT-3.5 | Speech recognition by Google</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
